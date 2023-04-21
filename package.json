@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node trainee_backend/server.js",
     "server": "nodemon trainee_backend/server.js",
-    "client" : "npm start --prefix trainee_frontend"
+    "client": "npm start --prefix trainee_frontend",
+    "dev" : "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "vishwaas",
   "license": "MIT",
@@ -21,6 +22,7 @@
     "mongoose": "^7.0.4"
   },
   "devDependencies": {
+    "concurrently": "^8.0.1",
     "nodemon": "^2.0.22"
   }
 }
