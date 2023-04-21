@@ -85,13 +85,7 @@ const loginUser = asyncHandler( async  (req,res) => {
 // Creates New User
 // Private Function for Authentication and Handled By Middleware
 const getMe = asyncHandler( async  (req,res) => {
-    const {id,name,email} = await User.findById(req.user.id);
-    const message = {
-        id,
-        name,
-        email
-    }
-    res.json({message})
+    res.status(200).json(req.user)
 })
 
 
