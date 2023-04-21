@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node trainee_backend/server.js",
-    "server": "nodemon trainee_backend/server.js"
+    "server": "nodemon trainee_backend/server.js",
+    "client" : "npm start --prefix trainee_frontend"
   },
   "author": "vishwaas",
   "license": "MIT",
