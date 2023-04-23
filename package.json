@@ -7,7 +7,7 @@
     "start": "node trainee_backend/server.js",
     "server": "nodemon trainee_backend/server.js",
     "client": "npm start --prefix trainee_frontend",
-    "dev" : "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "vishwaas",
   "license": "MIT",
