@@ -9,8 +9,7 @@ function GoalForm() {
 
   const onSubmit = (e) => {
     e.preventDefault()
-
-    dispatch(createGoal({ text }))
+    dispatch(createGoal({text}))
     setText('')
   }
 
@@ -32,6 +31,7 @@ function GoalForm() {
           <button className='btn btn-block' type='submit'>
             Add Goal
           </button>
+          
         </div>
       </form>
     </section>

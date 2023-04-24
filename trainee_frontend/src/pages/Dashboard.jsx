@@ -55,7 +55,7 @@ function Dashboard() {
         {goals.length > 0 ? (
           <div className='goals'>
             {goals.map((goal) => (
-              <GoalItem key={goal._id} goal={goal} />
+              <GoalItem key={goal._id} goal={goal} text={"Hello World"}/>
             ))}
           </div>
         ) : (
