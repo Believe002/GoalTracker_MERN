@@ -24,7 +24,7 @@ const setGoals = asyncHandler(async (req,res) => {
         text : req.body.text,
         user : req.user.id
     })
-
+    console.log("Goal Created",goal)
     res.status(200).json({goal})
 })
 
@@ -38,13 +38,17 @@ const updateGoals = asyncHandler(async (req,res) => {
         throw new Error('Goal Not Found');
     }
     
+<<<<<<< HEAD
     // Check for User ID exist
+=======
+    // Check for user existing or not
+>>>>>>> 95a2d65cd16b27305b6e9ec4a7e7f40457ceac3c
     if(!req.user) {
         res.status(401);
         throw new Error("User not found");
     }
 
-    if(goal.user.toString() != user.id) {
+    if(goal.user.toString() != req.user.id) {
         res.status.status(401);
         throw new Error('User not Authorized');
     }
@@ -68,12 +72,20 @@ const deleteGoals = asyncHandler(async (req,res) => {
         throw new Error('Goal Not Found');
     }
     
+<<<<<<< HEAD
     // Check for User found with id
+=======
+    // Check for user existing or not
+>>>>>>> 95a2d65cd16b27305b6e9ec4a7e7f40457ceac3c
     if(!req.user) {
         res.status(401);
         throw new Error("User not found");
     }
 
+<<<<<<< HEAD
+=======
+    //Check for User Deleting his own goals
+>>>>>>> 95a2d65cd16b27305b6e9ec4a7e7f40457ceac3c
     if(goal.user.toString() != req.user.id) {
         res.status.status(401);
         throw new Error('User not Authorized');

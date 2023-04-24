@@ -5,7 +5,7 @@ const User = require('../models/userModel');
 
 
 
-// Handles - Post Request using Route - /api/users/register
+// Handles - Post Request using Route - /api/users/
 // Creates New User
 const registerUser = asyncHandler( async (req,res) => {
     const {name,email,password} = req.body;
@@ -36,7 +36,7 @@ const registerUser = asyncHandler( async (req,res) => {
         password:hashedPassword
     })
 
-    console.log(user);
+    console.log(user,user.id);
     //Check User Created Successfully
     if(user) {
         const message = {
@@ -59,12 +59,12 @@ const registerUser = asyncHandler( async (req,res) => {
 // Login User
 const loginUser = asyncHandler( async  (req,res) => {
     const {email,password} = req.body;
-    console.log(password);
+    console.log(email,password);
 
     const user = await User.findOne({email});
     //Check User Created Successfully
     if(user && (await bcrypt.compare(password,user.password))) {
-     
+
         const message = {
             status : 'Login Successfull',
             _id : user.id,
@@ -85,7 +85,7 @@ const loginUser = asyncHandler( async  (req,res) => {
 // Creates New User
 // Private Function for Authentication and Handled By Middleware
 const getMe = asyncHandler( async  (req,res) => {
-    res.status(200).json(req.user)
+    res.json(req.user)
 })
 
 
