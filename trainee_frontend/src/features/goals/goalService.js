@@ -37,10 +37,11 @@ const updateGoal = async (goalId,goalData,token) => {
       Authorization: `Bearer ${token}`,
     },
   }
-  console.log(goalId,goalData)
+
   console.log("Sending Update Request")
+
   const response = await axios.put(API_URL + goalId,goalData,config)
-  console.log("returning Updated Data")
+
   console.log("response",response.data)
   return response.data
 }

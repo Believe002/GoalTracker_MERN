@@ -61,11 +61,10 @@ export const updateGoal = createAsyncThunk(
   async ({id,goalData},thunkAPI) => {
     try {
       console.log("Inside GoalSlice ",id,goalData)
-      const token = thunkAPI.getState().auth.user.token
-      // return await goalService.updateGoal(updateGoal,token)
       
-     //const { updatedGoal } = updateData
+      const token = thunkAPI.getState().auth.user.token
       console.log("Called Update Function")
+      
       return await goalService.updateGoal(id,goalData,token)
 
     } catch (error) {
