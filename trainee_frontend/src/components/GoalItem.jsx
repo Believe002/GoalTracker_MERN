@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { deleteGoal,updateGoal } from '../features/goals/goalSlice'
-import GoalForm from './GoalForm'
+
 
 function GoalItem({ goal,update}) {
   const dispatch = useDispatch()

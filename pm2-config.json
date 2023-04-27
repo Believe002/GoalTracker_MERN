@@ -1,0 +1,13 @@
+{
+    "apps" : [
+    {
+    "name" : "GoalTracker",
+     "cwd" : "/home/vishwaas/Desktop/Simform_Training/Programming/RestAPI/trainee_backend",
+     "script" : "server.js",
+     "autorestart" : true,
+     "watch" : false,
+     "instance" : 0,
+     "exec_mode" : "cluster"
+    }   
+   ]
+}
