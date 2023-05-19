@@ -1,0 +1,54 @@
+services:
+  
+  backend:
+    image: ghcr.io/believe002/node_backend:v1
+    container_name: backend
+  
+    ports: 
+      - 5000
+    env_file:
+      - ~/Desktop/env/backend_env
+    networks:
+     - backend
+     - frontend
+    depends_on: 
+      - database  
+
+
+  frontend:
+    image: ghcr.io/believe002/node_frontend:v1
+    container_name: frontend
+    build:
+      context: ./trainee_frontend
+    ports: 
+      - 5001:80
+    env_file:
+      - ~/Desktop/env/frontend_env
+    networks:
+      - frontend
+    depends_on:
+      - backend
+
+
+  database:
+    image: ghcr.io/believe002/mongo_goaldb:v1
+    container_name: database
+
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=vishwaas
+      - MONGO_INITDB_ROOT_PASSWORD=Simform@123
+      
+    ports:
+      - 27017
+    volumes:
+      - goaltracker:/data/db
+    networks:
+      - backend
+      
+
+volumes:
+  goaltracker:
+
+networks:
+  frontend:
+  backend:
